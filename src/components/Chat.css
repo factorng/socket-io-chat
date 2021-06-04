@@ -1,0 +1,11 @@
+.chat-wrapper {
+  width: 30vw;
+  height: 100vh;
+  position: relative;
+  background-color: bisque;
+}
+.chat-messages-wrapper {
+  height: 70vh;
+  background-color: white;
+  overflow: scroll;
+}

@@ -1,0 +1,20 @@
+.header {
+  background-color: #132127;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  padding: 1rem;
+}
+.header__button {
+  background-color: #61a7c5;
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+  align-self: end;
+}
+.header__button:hover {
+  transition: 0.6s;
+  opacity: 0.7;
+  cursor: pointer;
+}
