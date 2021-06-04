@@ -17,7 +17,8 @@ export default function Join({ location }) {
   }, [location.search]);
 
   const submitHandler = (event) => {
-    if (!name || !room) event.preventDefault();
+    event.preventDefault();
+    if (!name || !room) return;
     dispatch(set_user(name));
     history.push(`/chat?room=${room}`);
   };
