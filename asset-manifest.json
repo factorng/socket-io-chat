@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/socket-io-chat/static/css/main.d1d2171b.chunk.css",
-    "main.js": "/socket-io-chat/static/js/main.c6faa167.chunk.js",
-    "main.js.map": "/socket-io-chat/static/js/main.c6faa167.chunk.js.map",
+    "main.js": "/socket-io-chat/static/js/main.3cd9448d.chunk.js",
+    "main.js.map": "/socket-io-chat/static/js/main.3cd9448d.chunk.js.map",
     "runtime-main.js": "/socket-io-chat/static/js/runtime-main.7021e042.js",
     "runtime-main.js.map": "/socket-io-chat/static/js/runtime-main.7021e042.js.map",
-    "static/js/2.ca0a36ab.chunk.js": "/socket-io-chat/static/js/2.ca0a36ab.chunk.js",
-    "static/js/2.ca0a36ab.chunk.js.map": "/socket-io-chat/static/js/2.ca0a36ab.chunk.js.map",
+    "static/js/2.23f91b8a.chunk.js": "/socket-io-chat/static/js/2.23f91b8a.chunk.js",
+    "static/js/2.23f91b8a.chunk.js.map": "/socket-io-chat/static/js/2.23f91b8a.chunk.js.map",
     "index.html": "/socket-io-chat/index.html",
     "static/css/main.d1d2171b.chunk.css.map": "/socket-io-chat/static/css/main.d1d2171b.chunk.css.map",
-    "static/js/2.ca0a36ab.chunk.js.LICENSE.txt": "/socket-io-chat/static/js/2.ca0a36ab.chunk.js.LICENSE.txt"
+    "static/js/2.23f91b8a.chunk.js.LICENSE.txt": "/socket-io-chat/static/js/2.23f91b8a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7021e042.js",
-    "static/js/2.ca0a36ab.chunk.js",
+    "static/js/2.23f91b8a.chunk.js",
     "static/css/main.d1d2171b.chunk.css",
-    "static/js/main.c6faa167.chunk.js"
+    "static/js/main.3cd9448d.chunk.js"
   ]
 }
