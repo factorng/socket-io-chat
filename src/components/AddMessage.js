@@ -8,7 +8,8 @@ export default function AddMessage({ sendMessage }) {
       <form
         className="form-add-message"
         onSubmit={(event) => {
-          sendMessage(event, message);
+          event.preventDefault();
+          sendMessage(message.trim());
           setMessage("");
         }}
       >

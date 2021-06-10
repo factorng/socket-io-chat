@@ -7,8 +7,8 @@ import Message from "./Message";
 import AddMessage from "./AddMessage";
 import "./Chat.css";
 import Header from "./Header";
-const ENDPOINT = "https://socket-io-chat-456.herokuapp.com/";
-
+//const ENDPOINT = "https://socket-io-chat-456.herokuapp.com/";
+const ENDPOINT = "http://localhost:5000/";
 let socket;
 
 export default function Chat({ location }) {
@@ -16,6 +16,7 @@ export default function Chat({ location }) {
   const [room, setRoom] = useState("");
   const [users, setUsers] = useState([]);
   const [messages, setMessages] = useState([]);
+  const chatWrapperRef = React.useRef(null);
 
   const userName = useSelector((state) => state.user);
 
@@ -25,24 +26,24 @@ export default function Chat({ location }) {
     setName(userName);
     setRoom(room);
     socket.emit("join", { name: userName, room }, () => {});
-
+    socket.on("message", (message) => {
+      setMessages((prevState) => [...prevState, message]);
+      chatWrapperRef.current.scrollTo({
+        top: chatWrapperRef.current.scrollHeight,
+        left: 0,
+        behavior: "smooth",
+      });
+    });
+    socket.on("roomData", ({ users }) => {
+      setUsers(users);
+    });
     return () => {
       socket.disconnect();
       socket.off();
     };
   }, [location.search, userName]);
 
-  useEffect(() => {
-    socket.on("message", (message) => {
-      setMessages([...messages, message]);
-    });
-    socket.on("roomData", ({ users }) => {
-      setUsers(users);
-    });
-  }, [messages, users]);
-
-  function sendMessage(event, message) {
-    event.preventDefault();
+  function sendMessage(message) {
     if (message) socket.emit("sendMessage", message, () => {});
   }
 
@@ -51,10 +52,10 @@ export default function Chat({ location }) {
       {room && !userName && <Redirect to={`/joinByLink?room=${room}`} />}
       <div className="chat-wrapper">
         <Header users={users} room={room} />
-        <div className="chat-messages-wrapper">
-          {messages.map((msg) => (
+        <div className="chat-messages-wrapper" ref={chatWrapperRef}>
+          {messages.map((msg, i) => (
             <Message
-              key={msg.user + msg.text}
+              key={i}
               userName={msg.user}
               messageText={msg.text}
               isYourMessage={msg.user === name}
